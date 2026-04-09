@@ -1,19 +1,31 @@
+/* ============================================================
+   PRODUCT GRID
+   ============================================================ */
+
 .product-grid {
   flex: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 24px 20px;
+  padding: 24px 0 24px 32px;
+  align-content: start;
+  min-width: 0; /* prevent grid blowout */
 }
 
+/* Tablet — 2 columns */
 @media (max-width: 1024px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
+    padding: 24px 0;
+    gap: 20px 16px;
   }
 }
 
+/* Mobile — 2 columns tighter */
 @media (max-width: 640px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 16px 12px;
+    padding: 16px 0;
   }
 }

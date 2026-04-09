@@ -1,14 +1,122 @@
+/* ============================================================
+   FILTERS SIDEBAR
+   ============================================================ */
+
 .filters {
-  width: 260px;
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  border-right: 1px solid var(--clr-gray-200);
+  padding-right: 24px;
+  padding-top: 24px;
+  padding-bottom: 40px;
+  min-height: 600px;
 }
 
-.filter {
-  border-bottom: 1px solid #eee;
-  padding: 12px 0;
+.filters-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
+/* ── Accordion group ── */
+.filter-group {
+  border-bottom: 1px solid var(--clr-gray-200);
+}
+
+.filter-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  cursor: pointer;
+  list-style: none;
+  outline: none;
+  user-select: none;
+}
+
+/* Remove default marker in all browsers */
+.filter-group-header::-webkit-details-marker {
+  display: none;
+}
+
+.filter-group-header::marker {
+  display: none;
+}
+
+.filter-group-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--clr-gray-800);
+  text-transform: uppercase;
+}
+
+/* Checkbox for CUSTOMIZABLE row */
+.filter-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--clr-gray-400);
+  border-radius: 3px;
+  accent-color: var(--clr-gray-900);
+  cursor: pointer;
+}
+
+/* Chevron rotation when open */
+.filter-chevron {
+  color: var(--clr-gray-600);
+  transition: transform var(--transition);
+}
+
+.filter-group[open] .filter-chevron {
+  transform: rotate(180deg);
+}
+
+/* ── Options list ── */
+.filter-options {
+  padding-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--clr-gray-700);
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.filter-option:hover {
+  color: var(--clr-black);
+}
+
+.filter-option-check {
+  width: 15px;
+  height: 15px;
+  border: 1.5px solid var(--clr-gray-400);
+  border-radius: 2px;
+  accent-color: var(--clr-gray-900);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ── Responsive: hide on mobile ── */
 @media (max-width: 1024px) {
   .filters {
-    display: none;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--clr-gray-200);
+    padding-right: 0;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    min-height: auto;
+    display: none; /* hidden by default on tablet/mobile — toggled by toolbar */
+  }
+
+  .filters.is-open {
+    display: block;
   }
 }
