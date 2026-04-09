@@ -1,0 +1,14 @@
+.filters {
+  width: 260px;
+}
+
+.filter {
+  border-bottom: 1px solid #eee;
+  padding: 12px 0;
+}
+
+@media (max-width: 1024px) {
+  .filters {
+    display: none;
+  }
+}

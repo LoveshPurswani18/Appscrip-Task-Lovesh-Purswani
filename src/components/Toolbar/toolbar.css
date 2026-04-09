@@ -1,0 +1,15 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  border-bottom: 1px solid #eee;
+}
+
+.left {
+  display: flex;
+  gap: 20px;
+}
+
+.right select {
+  padding: 6px;
+}

@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 40px;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.icons {
+  display: flex;
+  gap: 16px;
+}
