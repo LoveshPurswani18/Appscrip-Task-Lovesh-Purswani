@@ -4,112 +4,182 @@
 
 .toolbar {
   border-bottom: 1px solid var(--clr-gray-200);
+  margin-top: 24px;
 }
 
 .toolbar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 40px;
+  padding: 24px 80px;
   max-width: var(--max-width);
   margin: 0 auto;
 }
 
-/* Left */
-.toolbar-left {
+/* Left side */
+.toolbar-left, .toolbar-left-mobile {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 40px;
+}
+
+.toolbar-left.desktop-only {
+  display: flex !important;
+}
+
+@media (max-width: 768px) {
+  .toolbar-left.desktop-only {
+    display: none !important;
+  }
 }
 
 .toolbar-count {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: var(--clr-gray-600);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--clr-gray-900);
+  letter-spacing: 0.04em;
 }
 
 .toolbar-filter-btn {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: var(--clr-gray-800);
-  padding: 6px 12px;
-  border-radius: 4px;
-  border: 1px solid transparent;
-  transition: border-color var(--transition), background var(--transition);
+  color: var(--clr-gray-400);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color var(--transition);
+  text-transform: uppercase;
 }
 
 .toolbar-filter-btn:hover {
-  background: var(--clr-gray-100);
-  border-color: var(--clr-gray-300);
+  color: var(--clr-gray-900);
 }
 
-/* Right — sort */
+.toolbar-filter-text {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Right side — Sort Dropdown */
 .toolbar-right {
-  position: relative;
-}
-
-.select-wrapper {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.sort-select {
-  appearance: none;
-  background: transparent;
+.sort-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--clr-gray-900);
+  background: none;
   border: none;
-  font-family: inherit;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: var(--clr-gray-800);
   cursor: pointer;
-  padding: 6px 28px 6px 0;
-  outline: none;
+  padding: 8px 0;
+  transition: opacity var(--transition);
 }
 
-.sort-select:hover {
-  color: var(--clr-black);
+.sort-toggle-btn:hover {
+  opacity: 0.7;
 }
 
 .select-chevron {
+  transition: transform var(--transition);
+}
+
+.select-chevron.open {
+  transform: rotate(180deg);
+}
+
+/* Custom Dropdown UI */
+.sort-dropdown {
   position: absolute;
+  top: 100%;
   right: 0;
-  pointer-events: none;
+  background: var(--clr-white);
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 16px 0;
+  z-index: 100;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sort-dropdown li {
+  padding: 12px 24px;
+  font-size: 14px;
   color: var(--clr-gray-600);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  text-align: right;
+  transition: background var(--transition), color var(--transition);
 }
 
-/* Screen-reader only utility */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+.sort-dropdown li:hover {
+  background: var(--clr-gray-50);
 }
 
-/* ── Responsive ── */
-@media (max-width: 768px) {
+.sort-dropdown li.selected {
+  font-weight: 700;
+  color: var(--clr-gray-900);
+}
+
+.check-icon {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* ── Responsive Mobile ── */
+@media (max-width: 1024px) {
   .toolbar-inner {
-    padding: 12px 16px;
+    padding: 24px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .toolbar {
+    margin-top: 16px;
   }
 
-  .toolbar-count {
-    display: none;
+  .toolbar-inner {
+    padding: 0;
+    justify-content: center;
   }
 
-  .toolbar-filter-btn {
-    padding: 8px 14px;
-    border: 1px solid var(--clr-gray-300);
-    border-radius: 4px;
+  /* Split layout 50/50 exactly. */
+  .toolbar-left-mobile, .toolbar-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0;
+  }
+
+  .toolbar-left-mobile {
+    border-right: 1px solid var(--clr-gray-200);
+  }
+
+  /* Reset toggle button to be centered without large right pull */
+  .sort-toggle-btn, .toolbar-filter-btn {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--clr-gray-900);
+    text-decoration: none;
+    gap: 8px;
+  }
+
+  .sort-dropdown {
+    width: auto;
+    min-width: 200px;
+    right: 0;
+    left: auto;
+    transform: none;
+    margin-right: 0;
   }
 }

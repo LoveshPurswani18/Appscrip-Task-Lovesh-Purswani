@@ -89,6 +89,7 @@ ul, ol {
 .layout {
   display: flex;
   gap: 0;
+  width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--space-10);
