@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Appscrip Task by Lovesh Purswani
+
+A pixel-perfect, responsive e-commerce Product Listing Page (PLP) designed exclusively for the metta muse storefront evaluation. This application faithfully implements the provided Figma specifications utilizing modern React architectures while strictly adhering to the "No UI Library / CSS Framework" restriction.
+
+### Live Links
+- **Public GitHub Repository:** https://github.com/LoveshPurswani18/Appscrip-Task-Lovesh-Purswani
+- **Live Hosted Application (Vercel):** https://appscrip-task-lovesh-purswani.vercel.app/
+
+---
+
+## Task Highlights & Features
+
+- **No CSS Frameworks:** Built 100% using native modern CSS properties. Advanced implementations including CSS Layout Grids, Flexbox, Variable Tokens, Checkbox-Hack Accordions, and dynamically calculated Media Queries were applied.
+- **Server Side Rendering (SSR):** Leveraged Next.js App Router for strict server-side hydration. Product payloads are processed asynchronously upstream via the Root Node (`page.tsx`) before delegating strictly typed structures to the interacting layout views. FakeStoreAPI integrations included dynamic handling to intercept/route broken domain references autonomously.
+- **Responsive PWA Adaptation:** Perfectly shifts formatting scaling down from ultra-wide 1440px desktop layouts (Stable 3-column product grid alongside contextual filter sidebar) down to mobile environments utilizing isolated Drawer Overlays and simplified 2-column mobile grids.
+- **Micro-Interactions Without JS bloat:** Custom "RECOMMENDED" Dropdowns natively handle hover styling without library reliance. The sidebar Accordion menus in the footer actively use CSS-only mechanics (`input type="checkbox"`) maximizing performance without JavaScript hydration dependencies.
+- **SEO & Structured Data Optimized:**
+  - Automated HTML `<title>` and `<meta name="description">` definitions mapping directly to "metta muse" semantics.
+  - Dynamically injected **JSON-LD `ItemList`** Structured Data Schema markup into the virtual DOM.
+  - Contextual DOM hierarchies properly nesting distinct `<h1/>` headers against nested `<h2/>` sub-sections.
+  - Dynamically aggregated `alt=""` and accessibility tags wrapping fetched iconography globally.
+
+---
+
+## Technology Stack
+- **Framework:** Next.js (React 18)
+- **Styling:** Vanilla CSS (Variables & BEM conventions)
+- **Typing:** TypeScript 
+- **Deployment:** Vercel
 
 ## Getting Started
 
-First, run the development server:
+To run the local development server:
 
 ```bash
+# Clone the repository
+git clone https://github.com/LoveshPurswani18/Appscrip-Task-Lovesh-Purswani
+
+# Move into project directory
+cd appscrip-task-lovesh-purswani
+
+# Install the packages
+npm install
+
+# Start the environment
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000) with your browser to experience the functional layout.
