@@ -1,56 +1,142 @@
+import Image from "next/image";
 import "./header.css";
 
 export default function Header() {
   return (
     <header className="header">
+
       {/* ── Announcement Bar ── */}
-      <div className="announcement-bar" role="banner">
-        <p>
-          Lorem ipsum dolor sit amet consectetur. Amet est posuere.&nbsp;
-          <a href="#" className="announcement-link">
-            Learnmore
-          </a>
-        </p>
+      <div className="announcement-bar">
+        {/* Desktop: 3 columns with icon + text */}
+        <div className="announcement-inner">
+          <div className="announcement-item">
+            <Image
+              src="/icons/header-icon.svg"
+              alt=""
+              width={16}
+              height={16}
+              aria-hidden="true"
+            />
+            <span>Lorem ipsum dolor</span>
+          </div>
+          <div className="announcement-item">
+            <Image
+              src="/icons/header-icon.svg"
+              alt=""
+              width={16}
+              height={16}
+              aria-hidden="true"
+            />
+            <span>Lorem ipsum dolor</span>
+          </div>
+          <div className="announcement-item">
+            <Image
+              src="/icons/header-icon.svg"
+              alt=""
+              width={16}
+              height={16}
+              aria-hidden="true"
+            />
+            <span>Lorem ipsum dolor</span>
+          </div>
+        </div>
       </div>
 
       {/* ── Main Header Row ── */}
       <div className="header-main">
-        {/* Left: hamburger (mobile) + lang selector */}
+
+        {/* LEFT: logo icon (+ hamburger on mobile) */}
         <div className="header-left">
           {/* Hamburger — mobile only */}
           <button
-            className="hamburger"
+            className="hamburger-btn"
             aria-label="Open navigation menu"
             aria-expanded="false"
+            aria-controls="main-nav"
           >
-            <span className="hamburger-line" />
-            <span className="hamburger-line" />
-            <span className="hamburger-line" />
+            <Image
+              src="/icons/hamburger-icon.svg"
+              alt=""
+              width={18}
+              height={15}
+              aria-hidden="true"
+            />
           </button>
 
-          {/* Language selector — desktop */}
-          <div className="lang-selector" aria-label="Language selector">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              aria-hidden="true"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-            </svg>
+          {/* Logo mark icon */}
+          <a href="/" aria-label="metta muse home" className="logo-icon-link">
+            <Image
+              src="/icons/logo.svg"
+              alt="metta muse logo mark"
+              width={36}
+              height={36}
+              priority
+            />
+          </a>
+        </div>
+
+        {/* CENTER: wordmark */}
+        <div className="header-center">
+          <a href="/" className="logo-wordmark" aria-label="metta muse">
+            LOGO
+          </a>
+        </div>
+
+        {/* RIGHT: action icons + ENG (desktop only) */}
+        <div className="header-right">
+          <nav className="header-icons" aria-label="User actions">
+            <button className="icon-btn" aria-label="Search products">
+              <Image
+                src="/icons/search-icon.svg"
+                alt=""
+                width={24}
+                height={24}
+                aria-hidden="true"
+              />
+            </button>
+
+            <button className="icon-btn" aria-label="Wishlist">
+              <Image
+                src="/icons/heart-icon.svg"
+                alt=""
+                width={24}
+                height={24}
+                aria-hidden="true"
+              />
+            </button>
+
+            <button className="icon-btn" aria-label="Shopping bag">
+              <Image
+                src="/icons/shopping-bag-icon.svg"
+                alt=""
+                width={24}
+                height={24}
+                aria-hidden="true"
+              />
+            </button>
+
+            {/* Profile — desktop only */}
+            <button className="icon-btn icon-btn--desktop" aria-label="Account">
+              <Image
+                src="/icons/profile-icon.svg"
+                alt=""
+                width={24}
+                height={24}
+                aria-hidden="true"
+              />
+            </button>
+          </nav>
+
+          {/* Language selector — desktop only */}
+          <div className="lang-selector lang-selector--desktop" role="button" tabIndex={0} aria-label="Language: English">
             <span>ENG</span>
             <svg
-              className="chevron"
               width="12"
               height="12"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="2.5"
               aria-hidden="true"
             >
               <polyline points="6 9 12 15 18 9" />
@@ -58,87 +144,19 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Centre: Logo */}
-        <div className="header-logo">
-          <a href="/" aria-label="metta muse home">
-            LOGO
-          </a>
-        </div>
-
-        {/* Right: action icons */}
-        <nav className="header-icons" aria-label="User actions">
-          <button className="icon-btn" aria-label="Search products">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              aria-hidden="true"
-            >
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
-          </button>
-
-          <button className="icon-btn" aria-label="Wishlist">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              aria-hidden="true"
-            >
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-            </svg>
-          </button>
-
-          <button className="icon-btn" aria-label="Shopping cart">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              aria-hidden="true"
-            >
-              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <path d="M16 10a4 4 0 0 1-8 0" />
-            </svg>
-          </button>
-
-          <button className="icon-btn" aria-label="Account">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              aria-hidden="true"
-            >
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-              <circle cx="12" cy="7" r="4" />
-            </svg>
-          </button>
-        </nav>
       </div>
 
       {/* ── Navigation Menu ── */}
-      <nav className="main-nav" aria-label="Main navigation">
+      <nav className="main-nav" id="main-nav" aria-label="Main navigation">
         <ul className="nav-list" role="list">
           <li><a href="#" className="nav-link">SHOP</a></li>
           <li><a href="#" className="nav-link">SKILLS</a></li>
           <li><a href="#" className="nav-link">STORIES</a></li>
           <li><a href="#" className="nav-link">ABOUT</a></li>
-          <li><a href="#" className="nav-link nav-link--contact">CONTACT US</a></li>
+          <li><a href="#" className="nav-link">CONTACT US</a></li>
         </ul>
       </nav>
+
     </header>
   );
 }
