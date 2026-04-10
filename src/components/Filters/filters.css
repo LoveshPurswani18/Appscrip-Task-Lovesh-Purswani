@@ -1,12 +1,7 @@
-/* ============================================================
-   FILTERS
-   ============================================================ */
-
 .filters {
   width: var(--sidebar-width);
   flex-shrink: 0;
   border-right: none;
-  /* hidden gracefully by react logic now */
 }
 
 .filters-inner {
@@ -25,10 +20,9 @@
   align-items: center;
   padding: 24px 0;
   cursor: pointer;
-  list-style: none; /* Hide default triangle */
+  list-style: none;
 }
 
-/* Hide webkit marker */
 .filter-group-header::-webkit-details-marker {
   display: none;
 }
@@ -170,7 +164,7 @@
   }
 
   .filters-inner {
-    padding-top: 40px; /* space for a close button if needed, or just normal layout */
+    padding-top: 40px;
   }
 
   .filters-close-btn {

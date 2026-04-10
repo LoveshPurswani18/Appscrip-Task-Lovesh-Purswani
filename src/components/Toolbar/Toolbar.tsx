@@ -20,7 +20,6 @@ export default function Toolbar({ isFilterVisible, toggleFilter }: ToolbarProps)
   const [selectedSort, setSelectedSort] = useState("recommended");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown on click outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {

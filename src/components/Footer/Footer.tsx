@@ -5,6 +5,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-top">
+
         {/* Newsletter Section */}
         <div className="footer-newsletter">
           <h2 className="footer-heading">BE THE FIRST TO KNOW</h2>
@@ -90,9 +91,7 @@ export default function Footer() {
 
       <div className="mobile-divider mobile-only divider-full"></div>
 
-      {/* ── Mid section — links ── */}
       <div className="footer-mid">
-        {/* mettä muse menu */}
         <div className="footer-accordion">
           <input type="checkbox" id="accordion-metta" className="accordion-toggle sr-only" />
           <label htmlFor="accordion-metta" className="footer-accordion-summary">
@@ -177,7 +176,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ── Bottom bar ── */}
       <div className="footer-bottom">
         <p>Copyright © 2023 mettamuse. All rights reserved.</p>
       </div>

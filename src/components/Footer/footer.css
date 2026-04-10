@@ -1,7 +1,3 @@
-/* ============================================================
-   FOOTER
-   ============================================================ */
-
 .footer {
   background: var(--clr-black, #000000);
   color: var(--clr-gray-300, #E5E5E5);
@@ -21,7 +17,7 @@
   margin: 0 auto;
 }
 
-/* Newsletter */
+/* Newsletter form*/
 .footer-newsletter {
   display: flex;
   flex-direction: column;
@@ -85,7 +81,7 @@
   border-color: var(--clr-white, #FFFFFF);
 }
 
-/* Contact Block */
+/* Contact block */
 .footer-contact-block {
   display: flex;
   flex-direction: column;
@@ -117,7 +113,7 @@
   opacity: 0.8;
 }
 
-/* Currency */
+/* Currency selector*/
 .footer-currency {
   display: flex;
   flex-direction: column;
@@ -153,7 +149,6 @@
   margin-top: 4px;
 }
 
-/* ── Mid section ── */
 .footer-mid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -195,7 +190,7 @@
   opacity: 0.7;
 }
 
-/* Social Wrapper */
+/* Social links */
 .footer-social-wrapper {
   display: flex;
   flex-direction: column;
@@ -269,7 +264,7 @@ span.desktop-only {
   display: inline !important;
 }
 
-/* ── Responsive Mobile ── */
+/* Responsive for Mobile */
 
 @media (max-width: 768px) {
   .mobile-only {
@@ -327,7 +322,7 @@ span.desktop-only {
     margin-top: 0;
     margin-bottom: 0;
     width: 100vw;
-    margin-left: -16px; /* pull back from the parent's padding */
+    margin-left: -16px;
   }
 
   .footer-contact-block {
@@ -363,7 +358,7 @@ span.desktop-only {
     padding: 0 16px;
   }
 
-  /* Footer Accordion using Checkbox Hack */
+  /* Footer Accordion using Checkbox */
   .footer-accordion-summary {
     cursor: pointer;
     display: flex;
@@ -431,14 +426,12 @@ span.desktop-only {
 }
 
 @media (min-width: 769px) {
-  /* Prevent clicking accordion on Desktop */
   .footer-accordion-summary {
     cursor: default;
     pointer-events: none;
     display: block;
   }
   
-  /* Ensure children of summary like inside text aren't blocking */
   .accordion-content {
     display: block !important;
   }

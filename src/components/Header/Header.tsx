@@ -1,13 +1,13 @@
 import Image from "next/image";
 import "./header.css";
+import Link from "next/link";
 
 export default function Header() {
   return (
     <header className="header">
 
-      {/* ── Announcement Bar ── */}
+      {/* Announcement Bar */}
       <div className="announcement-bar">
-        {/* Desktop: 3 columns with icon + text */}
         <div className="announcement-inner">
           <div className="announcement-item">
             <Image
@@ -42,12 +42,12 @@ export default function Header() {
         </div>
       </div>
 
-      {/* ── Main Header Row ── */}
+      {/* Main Header Row */}
       <div className="header-main">
 
-        {/* LEFT: logo icon (+ hamburger on mobile) */}
+        {/* left side */}
         <div className="header-left">
-          {/* Hamburger — mobile only */}
+          {/* Hamburger menu */}
           <button
             className="hamburger-btn"
             aria-label="Open navigation menu"
@@ -64,7 +64,7 @@ export default function Header() {
           </button>
 
           {/* Logo mark icon */}
-          <a href="/" aria-label="metta muse home" className="logo-icon-link">
+          <Link href="/" aria-label="metta muse home" className="logo-icon-link">
             <Image
               src="/icons/logo.svg"
               alt="metta muse logo mark"
@@ -72,17 +72,17 @@ export default function Header() {
               height={36}
               priority
             />
-          </a>
+          </Link>
         </div>
 
-        {/* CENTER: wordmark */}
+        {/* center side */}
         <div className="header-center">
-          <a href="/" className="logo-wordmark" aria-label="metta muse">
+          <Link href="/" className="logo-wordmark" aria-label="metta muse">
             LOGO
-          </a>
+          </Link>
         </div>
 
-        {/* RIGHT: action icons + ENG (desktop only) */}
+        {/* right side */}
         <div className="header-right">
           <nav className="header-icons" aria-label="User actions">
             <button className="icon-btn" aria-label="Search products">
@@ -146,7 +146,7 @@ export default function Header() {
 
       </div>
 
-      {/* ── Navigation Menu ── */}
+      {/* Navigation Menu */}
       <nav className="main-nav" id="main-nav" aria-label="Main navigation">
         <ul className="nav-list" role="list">
           <li><a href="#" className="nav-link">SHOP</a></li>

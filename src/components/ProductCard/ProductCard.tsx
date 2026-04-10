@@ -11,19 +11,16 @@ function cleanImageUrl(raw: string | undefined): string | null {
   
   let cleaned = raw;
   try {
-    // Sometimes it's a double JSON encoded stringified array: '["https://url"]'
     const parsed = JSON.parse(raw);
     if (Array.isArray(parsed) && parsed.length > 0) {
       cleaned = parsed[0];
     }
   } catch (e) {
-    // ignore
+    console.log(e);
   }
 
-  // Strip off messy array brackets or straggling quotations.
   cleaned = cleaned.replace(/^\[?"?/, "").replace(/"?\]?$/, "").replace(/\\"/g, "").trim();
   
-  // The API uses broken text-based placeholders occasionally, map them to a known working image.
   if (cleaned.includes("placehold.co") || cleaned.includes("any")) {
     return "https://i.imgur.com/QkIa5tT.jpeg";
   }
@@ -40,7 +37,6 @@ export default function ProductCard({ product }: Props) {
   const imageUrl = cleanImageUrl(product.images?.[0]);
   const hasValidImage = Boolean(imageUrl);
   
-  // Mocking status for visual completeness per Figma design
   const isOutOfStock = product.title.toLowerCase().includes("generic") || product.id === 2;
   const isNewProduct = product.id === 1;
 

@@ -62,7 +62,6 @@ export default function Filters({ isVisible, onClose }: FiltersProps) {
       id="filters-sidebar"
       aria-label="Product filters"
     >
-      {/* Mobile close button overlay top area */}
       <button 
         className="filters-close-btn mobile-only" 
         onClick={onClose} 
